@@ -18,6 +18,7 @@ public class RedisServiceTest {
 
     @Test
     public void testRedis() throws Exception {
+        redisService.testRedis();
 //        System.out.println(redisService.testRedis());
     }
 }

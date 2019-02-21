@@ -1,11 +1,14 @@
 package com.example.springmultipledemo.redis;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -17,23 +20,18 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class RedisService {
 
+
+
     @Autowired
     private ObjectMapper jacksonObjectMapper;
-    @Autowired
-    private StringRedisTemplate stringRedisTemplate;
-    @Autowired
-    private RedisTemplate<String,Object> redisTemplate;
 
-    public String testRedis() throws Exception{
-        List<Object> list = new ArrayList<>();
-        Cat cat1 = new Cat();
-        cat1.setName("咪咪");
-        list.add(cat1);
-        list.add(cat1);
-        System.out.println(list.size());
-//        list.add(new Cat());
-        stringRedisTemplate.opsForList().rightPush("list","哈哈");
-        return "运行成功！";
+    //    @Autowired
+//    private StringRedisTemplate stringRedisTemplate;
+//    @Autowired
+//    private RedisTemplate<String,Object> redisTemplate;
+
+    public String testRedis() throws IOException {
+        return null;
     }
 
 }
